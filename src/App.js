@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ItemList from './ItemList';
 import FormItem from './FormItem';
+import DeleteItem from './DeleteItem';
 
 class App extends React.Component {
   state = {
@@ -33,11 +34,12 @@ class App extends React.Component {
         <h2>Shopping List</h2>
 
         <FormItem addItem={this.addItem}
-                  inputIsEmpty={this.inputIsEmpty}
-                  deleteLastItem={this.deleteLastItem}
-                  noItemsFound={this.noItemsFound} />
-
+                  inputIsEmpty={this.inputIsEmpty}                  
+                   />
+        <DeleteItem deleteLastItem={this.deleteLastItem} 
+                    noItemsFound={this.noItemsFound}/>
         <ItemList items={this.state.items} />
+        
       </div>
     );
   }
